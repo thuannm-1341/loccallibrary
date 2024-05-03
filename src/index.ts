@@ -4,6 +4,7 @@ import path from 'path';
 import router from './routes';
 import logger from 'morgan';
 import * as dotenv from 'dotenv';
+import { AppDataSource } from './configs/ormConfig';
 dotenv.config();
 
 const port = process.env.PORT;
@@ -20,7 +21,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-
 app.use(logger('dev'));
 
 app.use('/', router);
@@ -33,3 +33,9 @@ app.use((err: Error, req: Request, res: Response) => {
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
 });
+
+AppDataSource.initialize()
+  .then(() => {
+    console.log('Database initialized');
+  })
+  .catch(error => console.log('Database connect failed: ', error));
