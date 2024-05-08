@@ -7,5 +7,11 @@ export const ENTITY_PROPERTY_LENGTH = {
 
 export const BOOK_INSTANCE_STATUS = {
   AVAILABLE: 'Available',
-  UNAVAILABLE: 'Unavailable',
+  LOANED: 'Loaned',
+  MAINTENANCE: 'Maintenance',
+};
+
+export const ORDER = {
+  ASC: 'ASC',
+  DESC: 'DESC',
 };

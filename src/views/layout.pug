@@ -1,7 +1,7 @@
 doctype html
 html(lang='en')
   head
-    title= title
+    title #{t(title)}
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1' )
     link(rel="stylesheet", href="/stylesheets/bootstrap.css")
@@ -35,4 +35,3 @@ html(lang='en')
             a(href='?locale=en') #{t('sidebar.english')} | 
             a(href='?locale=vi') #{t('sidebar.vietnamese')}
       block content
-

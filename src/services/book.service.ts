@@ -45,4 +45,11 @@ export class BookService {
       numGenres,
     };
   }
+
+  async getAllBooks(): Promise<BookEntity[]> {
+    return await this.bookRepository.find({
+      order: { title: 'ASC' },
+      relations: ['author'],
+    });
+  }
 }

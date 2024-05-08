@@ -1,5 +1,6 @@
 {
   "home": {
+    "title": "Trang chủ thư viện",
     "welcome": "Chào mừng bạn đến với Sun Asterisk",
     "content": "Nội dung",
     "recordInfo": "Tình trạng thư viện của chúng tôi",
@@ -21,5 +22,35 @@
     "bookInstanceCreate": "Tạo mới bản sao sách",
     "english": "Tiếng Anh",
     "vietnamese": "Tiếng Việt"
+  },
+  "book": {
+    "title": {
+      "listOfBook": "Danh sách các quyển sách có trong thư viện",
+      "emptyBookList": "Không có quyển sách nào"
+    }
+  },
+  "author": {
+    "title": {
+      "listOfAuthor": "Danh sách tác giả",
+      "emptyAuthorList": "Không có tác giả nào"
+    }
+  },
+  "bookInstance": {
+    "title": {
+      "listOfBookInstance": "Danh sách các bản sao sách",
+      "emptyBookInstanceList": "Không có bản sao sách nào"
+    },
+    "status": {
+      "available": "Có sẵn",
+      "loaned": "Đang cho mượn",
+      "maintenance": "Đang sửa chữa"
+    },
+    "dueBack": "Hạn cuối"
+  },
+  "genre": {
+    "title": {
+      "listOfGenre": "Danh sách thể loại",
+      "emptyGenreList": "Không có thể loại nào"
+    }
   }
 }
