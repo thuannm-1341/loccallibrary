@@ -1,10 +1,10 @@
 import cookieParser from 'cookie-parser';
 import express, { Request, Response } from 'express';
 import path from 'path';
-import router from './routes';
 import logger from 'morgan';
 import * as dotenv from 'dotenv';
 import { AppDataSource } from './configs/ormConfig';
+import router from './routes';
 dotenv.config();
 
 const port = process.env.PORT;
