@@ -4,3 +4,8 @@ export const ENTITY_PROPERTY_LENGTH = {
   LARGE: 200,
   EXTRA_LARGE: 1000,
 };
+
+export const BOOK_INSTANCE_STATUS = {
+  AVAILABLE: 'Available',
+  UNAVAILABLE: 'Unavailable',
+};

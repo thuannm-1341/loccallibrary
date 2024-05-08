@@ -1,14 +1,13 @@
 // routes/index.ts
-import { Router, Request, Response } from 'express';
+import { Router } from 'express';
 import authorRouter from './author.route';
 import bookRouter from './book.route';
 import bookInstanceRouter from './bookInstance.route';
 import genreRouter from './genre.route';
+import { index } from '../controllers/book.controller';
 
 const router: Router = Router();
-router.get('/', (req: Request, res: Response) => {
-  res.render('index', { title: 'Express' });
-});
+router.get('/', index);
 
 router.use('/authors', authorRouter);
 router.use('/books', bookRouter);
