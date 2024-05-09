@@ -1,20 +1,17 @@
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response } from 'express';
 import asyncHandler from 'express-async-handler';
-import { Repository } from 'typeorm';
-import { GenreEntity } from '../entities/genre.entity';
-import { AppDataSource } from '../configs/ormConfig';
+import { GenreService } from '../services/genre.service';
 
-const genreRepository: Repository<GenreEntity> =
-  AppDataSource.getRepository(GenreEntity);
+const genreService = new GenreService();
 
 // Display list of all genres
 export const getGenres = asyncHandler(async (req: Request, res: Response) => {
-  const genres = await genreRepository.find({
-    order: { name: 'ASC' },
-  });
+  const genres = await genreService.getAllGenres();
+  const errors = req.flash('error');
   res.render('genres/index', {
     genres,
     title: 'genre.title.listOfGenre',
+    errors,
   });
 });
 
@@ -33,7 +30,21 @@ export const createGenre = asyncHandler(async (req: Request, res: Response) => {
 // Display detail page for a specific genre
 export const getGenreDetails = asyncHandler(
   async (req: Request, res: Response) => {
-    res.send(`NOT IMPLEMENTED: Genre detail: ${req.params.id}`);
+    const id = parseInt(req.params.id);
+    if (isNaN(id)) {
+      req.flash('error', 'genre.error.invalidParameter');
+      res.redirect('/genres');
+    }
+    const genre = await genreService.getGenreDetail(id);
+    if (genre === null) {
+      req.flash('error', 'genre.error.notFound');
+      res.redirect('/genres');
+    }
+    res.render('genres/show', {
+      genre,
+      genreBooks: genre?.books,
+      title: 'genre.title.detail',
+    });
   },
 );
 

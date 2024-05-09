@@ -8,7 +8,9 @@
     "bookInstance": "Bản sao",
     "availableBookInstance": "Tất cả các bản sao có sẵn",
     "author": "Tác giả",
-    "genre": "Thể loại"
+    "genre": "Thể loại",
+    "error": "Lỗi",
+    "close": "Đóng"
   },
   "sidebar": {
     "name": "Thư viện địa phương",
@@ -26,31 +28,73 @@
   "book": {
     "title": {
       "listOfBook": "Danh sách các quyển sách có trong thư viện",
-      "emptyBookList": "Không có quyển sách nào"
+      "detail": "Chi tiết sách"
+    },
+    "message": {
+      "title": "Tựa đề",
+      "author": "Tác giả",
+      "summary": "Tóm tắt",
+      "ISBN": "ISBN",
+      "genres": "Thể loại",
+      "copies": "Bản sao",
+      "emptyBookList": "Không có quyển sách nào",
+      "noGenres": "Quyển sách này chưa có thể loại"
+    },
+    "error": {
+      "invalidParameter": "Tham số id sách không hợp lệ",
+      "notFound": "Không tìm thấy sách"
     }
   },
   "author": {
     "title": {
       "listOfAuthor": "Danh sách tác giả",
-      "emptyAuthorList": "Không có tác giả nào"
+      "detail": "Chi tiết tác giả"
+    },
+    "message": {
+      "emptyAuthorList": "Không có tác giả nào",
+      "author": "Tác giả",
+      "books": "Sách",
+      "emptyBookList": "Không có sách nào"
+    },
+    "error": {
+      "invalidParameter": "Tham số id tác giả không hợp lệ",
+      "notFound": "Không tìm thấy tác giả"
     }
   },
   "bookInstance": {
     "title": {
       "listOfBookInstance": "Danh sách các bản sao sách",
-      "emptyBookInstanceList": "Không có bản sao sách nào"
+      "detail": "Chi tiết bản sao"
+    },
+    "message": {
+      "emptyBookInstanceList": "Không có bản sao nào",
+      "title": "Tựa đề",
+      "imprint": "Ấn bản",
+      "dueBack": "Hạn cuối"
     },
     "status": {
       "available": "Có sẵn",
       "loaned": "Đang cho mượn",
       "maintenance": "Đang sửa chữa"
     },
-    "dueBack": "Hạn cuối"
+    "error": {
+      "invalidParameter": "Tham số id bản sao sách không hợp lệ",
+      "notFound": "Không tìm thấy bản sao"
+    }
   },
   "genre": {
     "title": {
       "listOfGenre": "Danh sách thể loại",
-      "emptyGenreList": "Không có thể loại nào"
+      "detail": "Chi tiết thể loại"
+    },
+    "message": {
+      "books": "Sách",
+      "emptyGenreList": "Không có thể loại nào",
+      "emptyBookList": "Không có quyển sách nào"
+    },
+    "error": {
+      "invalidParameter": "Tham số id thể loại không hợp lệ",
+      "notFound": "Không tìm thấy thể loại"
     }
   }
 }

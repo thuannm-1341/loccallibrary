@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  h1 #{t('author.message.author')}: #{author.name()}
+  p (#{authorBirthDate} - #{authorDeathDate})
+  p #[strong #{t('author.message.books')} ] 
+  if authorBooks.length !== 0
+    each val, index in authorBooks
+      a(href=val.url()) #{val.title}
+      p #{val.summary}
+  else
+    p #{t('author.message.emptyBookList')}

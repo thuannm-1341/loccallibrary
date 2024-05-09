@@ -19,7 +19,8 @@ export const index = asyncHandler(async (req: Request, res: Response) => {
 // Display list of all books
 export const getBooks = asyncHandler(async (req: Request, res: Response) => {
   const books = await bookService.getAllBooks();
-  res.render('books/index', { books, title: 'book.title.listOfBook' });
+  const errors = req.flash('error');
+  res.render('books/index', { books, title: 'book.title.listOfBook', errors });
 });
 
 // Display create-book form
@@ -37,7 +38,23 @@ export const createBook = asyncHandler(async (req: Request, res: Response) => {
 // Display detail page for a specific book
 export const getBookDetails = asyncHandler(
   async (req: Request, res: Response) => {
-    res.send(`NOT IMPLEMENTED: Book detail: ${req.params.id}`);
+    const id = parseInt(req.params.id);
+    if (isNaN(id)) {
+      req.flash('error', 'book.error.invalidParameter');
+      res.redirect('/books');
+    }
+    const book = await bookService.getBookDetail(id);
+    if (book === null) {
+      req.flash('error', 'book.error.notFound');
+      res.redirect('/books');
+    }
+    res.render('books/show', {
+      book,
+      bookInstances: book?.bookInstances,
+      bookGenres: book?.genres,
+      bookInstanceStatuses: book?.bookInstances,
+      title: 'book.title.detail',
+    });
   },
 );
 

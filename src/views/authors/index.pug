@@ -4,10 +4,10 @@ block content
   h1 #{t(title)}
   if authors.length
     ul 
-      each author in authors 
+      each val, index in authors 
         li 
-          a(href=author.url()) #{author.name()} 
-          | (#{author.dateOfBirth?new Date(author.dateOfBirth):''} - #{author.dateOfDeath?new Date(author.dateOfDeath):''})
+          a(href=val.url()) #{val.name()}   
+          | (#{authorBirthDates[index]} - #{authorDeathDates[index]})
 
   else
-    p #{t('author.title.emptyAuthorList')}
+    p #{t('author.message.emptyAuthorList')}
