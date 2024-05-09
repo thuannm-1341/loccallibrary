@@ -1,5 +1,22 @@
 import { Request, Response, NextFunction } from 'express';
 import asyncHandler from 'express-async-handler';
+import { BookService } from '../services/book.service';
+
+const bookService = new BookService();
+
+export const index = asyncHandler(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const generalData = await bookService.getLibraryGeneralData();
+    res.render('index', {
+      title: 'Local library home',
+      numBooks: generalData.numBooks,
+      numBookInstances: generalData.numBookInstances,
+      numAvailableBookInstances: generalData.availableBookInstances, // count available bookInstance
+      numAuthors: generalData.numAuthors,
+      numGenres: generalData.numGenres,
+    });
+  },
+);
 
 // Display list of all books
 export const getBooks = asyncHandler(
