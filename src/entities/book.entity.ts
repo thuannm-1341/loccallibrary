@@ -47,4 +47,8 @@ export class BookEntity extends BaseEntity {
   @ManyToMany(() => GenreEntity)
   @JoinTable()
   genres: GenreEntity[];
+
+  url(): string {
+    return `/books/${this.id}`;
+  }
 }
