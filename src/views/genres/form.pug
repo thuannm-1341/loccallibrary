@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  h1 #{t(title)}
+  form(method='POST' action='create')
+    .form-row
+      .form-group.col-md-6
+        label(for='name') #{t('genre.message.genre')}
+        input#name.form-control(type='text' placeholder='Fantasy, Poetry etc.' name='name' required value=(undefined===genre ? '' : genre.name))
+    .form-row
+      .form-group.col-md-6
+        button.btn.btn-primary(type='submit') #{t('genre.message.submit')}
+  if formErrors
+    ul
+      for error in formErrors
+        li #{t(error.msg)}

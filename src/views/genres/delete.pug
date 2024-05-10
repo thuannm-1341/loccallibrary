@@ -1,0 +1,19 @@
+extends ../layout
+block content
+  h1 #{t(title)}: #{genre.name}
+  if books.length
+    p #[strong #{t('genre.message.deleteWarning')}]
+    div(style='margin-left:20px;margin-top:20px')
+    h4 #{t('genre.message.books')}
+    each book in books
+      dt
+        a(href=book.url()) #{book.title}
+      dd #{book.summary}
+  else
+    p #{t('genre.message.deleteConfirm')}
+
+    form(method='POST')
+      div.form-group
+        input#genreId.form-control(type='hidden', name='genreId', value=genre.id)
+      
+      button.btn.btn-primary(type='submit') #{t('genre.message.delete')}

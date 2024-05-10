@@ -1,0 +1,32 @@
+extend ../layout
+
+block content
+  h1 #{t(title)}
+  form(method='POST' action='create')
+    .form-row
+      .form-group.col-md-6
+        label(for='bookId') #{t('bookInstance.message.books')}:
+        select#books.form-control(name='bookId' required)
+          each book in books
+            option(value=book.id)= book.title
+    .form-row
+      .form-group.col-md-6
+        label(for='imprint') #{t('bookInstance.message.imprint')}
+        input#imprint.form-control(type='text' placeholder='For Books, 11/22/2016, Hardcover' name='imprint' required value=(bookInstance&&bookInstance.imprint!==undefined)?bookInstance.imprint:'')
+    .form-row
+     .form-group.col-md-6
+        label(for='dueBack') #{t('bookInstance.message.dueBack')}:
+        input#dueBack.form-control(type='date' placeholder='Date when book available' name='dueBack' required value=(bookInstance&&bookInstance.dueBack!==undefined)?bookInstance.dueBack:'')
+    .form-row
+      .form-group.col-md-6
+        label(for='status') #{t('bookInstance.message.status')}:
+        select#books.form-control(name='status' required)
+          each status in statuses
+            option(value=status)= t('bookInstance.status.'+status.toLowerCase())
+    .form-row
+      .form-group.col-md-6
+        button.btn.btn-primary(type='submit') #{t('book.message.submit')}
+  if formErrors
+    ul
+      for error in formErrors
+        li #{t(error.msg)}

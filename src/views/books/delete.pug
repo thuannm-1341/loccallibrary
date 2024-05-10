@@ -1,11 +1,9 @@
 extends ../layout
 block content
-  h1 #{t('book.message.title')}: #{book.title}
+  h1 #{t(title)}: #{book.title}
   p #[strong #{t('book.message.author')}: ] 
     |
     a(href=book.author.url()) #{book.author.name()}
-  p #[strong #{t('book.message.summary')}: ] #{book.summary}
-  p #[strong #{t('book.message.ISBN')}: ] #{book.isbn}
   p #[strong #{t('book.message.genres')}: ]
   if bookGenres.length !== 0
     each val, index in bookGenres
@@ -14,9 +12,8 @@ block content
         |,
   else
     p #{t('book.message.noGenres')}
-  div(class='mt-4 ml-4')
-  h4 #{t('book.message.copies')}
   if bookInstances.length !== 0
+    p #[strong #{t('author.message.deleteWarning')}]
     each val in bookInstances
       hr
       if val.status==='Available'
@@ -32,10 +29,10 @@ block content
         |
         a(href=val.url()) #{val.id}
   else
-    p #{t('bookInstance.message.emptyBookInstanceList')}
+    p #{t('book.message.deleteConfirm')}
 
-  hr
-  p
-    a(href=book.url()+'/delete') #{t('book.message.delete')}
-  p
-    a(href=book.url()+'/update') #{t('book.message.update')}
+    form(method='POST')
+      div.form-group
+        input#authorid.form-control(type='hidden', name='bookId', value=book.id)
+      
+      button.btn.btn-primary(type='submit') #{t('book.message.delete')}

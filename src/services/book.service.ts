@@ -60,4 +60,12 @@ export class BookService {
       where: { id: id },
     });
   }
+
+  async saveBook(book: BookEntity): Promise<BookEntity> {
+    return await this.bookRepository.save(book);
+  }
+
+  async deleteBook(id: number): Promise<void> {
+    await this.bookRepository.delete(id);
+  }
 }
