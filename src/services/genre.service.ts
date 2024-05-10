@@ -13,4 +13,12 @@ export class GenreService {
       order: { name: 'ASC' },
     });
   }
+
+  async getGenreDetail(id: number): Promise<GenreEntity | null> {
+    return await this.genreRepository.findOne({
+      order: { name: 'ASC' },
+      relations: ['books'],
+      where: { id: id },
+    });
+  }
 }

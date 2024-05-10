@@ -1,0 +1,35 @@
+extends ../layout
+block content
+  h1 #{t('book.message.title')}: #{book.title}
+  p #[strong #{t('book.message.author')}: ] 
+    |
+    a(href=book.author.url()) #{book.author.name()}
+  p #[strong #{t('book.message.summary')}: ] #{book.summary}
+  p #[strong #{t('book.message.ISBN')}: ] #{book.isbn}
+  p #[strong #{t('book.message.genres')}: ]
+  if bookGenres.length !== 0
+    each val, index in bookGenres
+      a(href=val.url()) #{val.name}
+      if index < bookGenres.length - 1
+        |,
+  else
+    p #{t('book.message.noGenres')}
+  div(class='mt-4 ml-4')
+  h4 #{t('book.message.copies')}
+  if bookInstances.length !== 0
+    each val in bookInstances
+      hr
+      if val.status==='Available'
+        p.text-success #{t('bookInstance.status.available')}
+      else if val.status==='Maintenance'
+        p.text-danger #{t('bookInstance.status.maintenance')}
+      else
+        p.text-warning #{t('bookInstance.status.loaned')}
+      p #[strong #{t('bookInstance.message.imprint')}:] #{val.imprint}
+      if val.status!=='Available'
+        p #[strong #{t('bookInstance.message.dueBack')}:] #{val.dueBack}
+      p #[strong Id: ]
+        |
+        a(href=val.url()) #{val.id}
+  else
+    p #{t('bookInstance.message.emptyBookInstanceList')}

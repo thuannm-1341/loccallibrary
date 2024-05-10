@@ -52,4 +52,12 @@ export class BookService {
       relations: ['author'],
     });
   }
+
+  async getBookDetail(id: number): Promise<BookEntity | null> {
+    return await this.bookRepository.findOne({
+      order: { title: 'ASC' },
+      relations: ['author', 'bookInstances', 'genres'],
+      where: { id: id },
+    });
+  }
 }

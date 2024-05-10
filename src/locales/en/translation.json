@@ -8,7 +8,9 @@
     "bookInstance": "Book instances",
     "availableBookInstance": "Available book instances",
     "author": "Authors",
-    "genre": "Genres"
+    "genre": "Genres",
+    "error": "Error",
+    "close": "Close"
   },
   "sidebar": {
     "name": "Local library",
@@ -26,31 +28,73 @@
   "book": {
     "title": {
       "listOfBook": "List of books available in the library",
-      "emptyBookList": "There are no books"
+      "detail": "Book detail"
+    },
+    "message": {
+      "title": "Title",
+      "author": "Author",
+      "summary": "Summary",
+      "ISBN": "ISBN",
+      "genres": "Genres",
+      "copies": "Copies",
+      "emptyBookList": "There are no books",
+      "noGenres": "This book has no genre"
+    },
+    "error": {
+      "invalidParameter": "Invalid book Id parameter",
+      "notFound": "Book not found"
     }
   },
   "author": {
     "title": {
       "listOfAuthor": "Author list",
-      "emptyAuthorList": "There are no authors"
+      "detail": "Author detail"
+    },
+    "message": {
+      "emptyAuthorList": "There are no authors",
+      "author": "Author",
+      "books": "Books",
+      "emptyBookList": "There are no books"
+    },
+    "error": {
+      "invalidParameter": "Invalid author Id parameter",
+      "notFound": "Author not found"
     }
   },
   "bookInstance": {
     "title": {
       "listOfBookInstance": "Book Instance List",
-      "emptyBookInstanceList": "There are no book instances"
+      "detail": "Book instance detail"
     },
     "status": {
       "available": "Available",
       "loaned": "Loaned",
       "maintenance": "Maintenance"
     },
-    "dueBack": "Due back"
+    "message": {
+      "emptyBookInstanceList": "There are no book instances",
+      "title": "Title",
+      "imprint": "Imprint",
+      "dueBack": "Due back"
+    },
+    "error": {
+      "invalidParameter": "Invalid book instance Id parameter",
+      "notFound": "Book instance not found"
+    }
   },
   "genre": {
     "title": {
       "listOfGenre": "Genre list",
-      "emptyGenreList": "There are no genres"
+      "detail": "Genre detail"
+    },
+    "message": {
+      "books": "Books",
+      "emptyGenreList": "There are no genres",
+      "emptyBookList": "There are no books"
+    },
+    "error": {
+      "invalidParameter": "Genre book instance Id parameter",
+      "notFound": "Genre not found"
     }
   }
 }

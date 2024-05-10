@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  h1 ID: #{bookInstance.id}
+  p #[strong #{t('bookInstance.message.title')}:] #{book.title}
+  p #[strong #{t('bookInstance.message.imprint')}: ] #{bookInstance.imprint}
+  if bookInstance.status==='Available'
+    p.text-success #{t('bookInstance.status.available')}
+  else if bookInstance.status==='Maintenance'
+    p.text-danger #{t('bookInstance.status.maintenance')}
+  else
+    p.text-warning #{t('bookInstance.status.loaned')}
+  if bookInstance.status!=='Available'
+    p #[strong #{t('bookInstance.message.dueBack')}:] #{dueBack}
