@@ -10,3 +10,7 @@ block content
       p #{val.summary}
   else
     p #{t('author.message.emptyBookList')}
+
+  hr
+  p
+    a(href=author.url()+'/delete') #{t('author.message.delete')}

@@ -28,7 +28,10 @@
   "book": {
     "title": {
       "listOfBook": "List of books available in the library",
-      "detail": "Book detail"
+      "detail": "Book detail",
+      "update": "Update book",
+      "delete": "Delete book",
+      "create": "Create book"
     },
     "message": {
       "title": "Title",
@@ -38,7 +41,17 @@
       "genres": "Genres",
       "copies": "Copies",
       "emptyBookList": "There are no books",
-      "noGenres": "This book has no genre"
+      "noGenres": "This book has no genre",
+      "update": "Update book",
+      "delete": "Delete book",
+      "submit": "Submit",
+      "create": "Add new book",
+      "deleteWarning": "Delete the following book instances before attempting to delete this book.",
+      "deleteConfirm": "Do you really want to delete this book?",
+      "invalidTitleLength": "Title length is at least 3 characters",
+      "invalidAuthor": "Author must not be left empty",
+      "invalidSummaryLength": "Summary length is at least 3 characters",
+      "invalidIsbnLength": "Isbn length is at least 1 character"
     },
     "error": {
       "invalidParameter": "Invalid book Id parameter",
@@ -48,13 +61,27 @@
   "author": {
     "title": {
       "listOfAuthor": "Author list",
-      "detail": "Author detail"
+      "detail": "Author detail",
+      "delete": "Delete author",
+      "create": "Create author"
     },
     "message": {
       "emptyAuthorList": "There are no authors",
       "author": "Author",
       "books": "Books",
-      "emptyBookList": "There are no books"
+      "emptyBookList": "There are no books",
+      "delete": "Delete",
+      "deleteWarning": "Delete the following books before attempting to delete this author.",
+      "deleteConfirm": "Do you really want to delete this author?",
+      "firstName": "First name",
+      "familyName": "Family name",
+      "dateOfBirth": "Date of birth",
+      "dateOfDeath": "Date of death",
+      "submit": "Submit",
+      "invalidFirstNameLength": "First name length is at least 3",
+      "invalidFamilyNameLength": "Family name length is at least 3",
+      "invalidDateOfBirth": "Date of birth can't be in the future",
+      "invalidDateOfDeath": "Date of death can't be in the future"
     },
     "error": {
       "invalidParameter": "Invalid author Id parameter",
@@ -64,7 +91,8 @@
   "bookInstance": {
     "title": {
       "listOfBookInstance": "Book Instance List",
-      "detail": "Book instance detail"
+      "detail": "Book instance detail",
+      "create": "Create book instance"
     },
     "status": {
       "available": "Available",
@@ -75,7 +103,13 @@
       "emptyBookInstanceList": "There are no book instances",
       "title": "Title",
       "imprint": "Imprint",
-      "dueBack": "Due back"
+      "dueBack": "Due back",
+      "books": "Books",
+      "status": "Statuses",
+      "delete": "Delete",
+      "invalidImprint": "Invalid imprint",
+      "invalidDueBack": "Invalid due back",
+      "invalidStatus": "Invalid status"
     },
     "error": {
       "invalidParameter": "Invalid book instance Id parameter",
@@ -85,12 +119,20 @@
   "genre": {
     "title": {
       "listOfGenre": "Genre list",
-      "detail": "Genre detail"
+      "detail": "Genre detail",
+      "create": "Create new genre",
+      "delete": "Delete"
     },
     "message": {
       "books": "Books",
       "emptyGenreList": "There are no genres",
-      "emptyBookList": "There are no books"
+      "emptyBookList": "There are no books",
+      "genre": "Genre",
+      "submit": "Submit",
+      "delete": "Delete",
+      "deleteConfirm": "Do you really want to delete this genre?",
+      "deleteWarning": "Delete the following book instances before attempting to delete this genre.",
+      "invalidNameLength": "Name's length is at least 3 characters"
     },
     "error": {
       "invalidParameter": "Genre book instance Id parameter",

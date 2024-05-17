@@ -1,0 +1,28 @@
+extend ../layout
+
+block content
+  h1 #{t(title)}
+  form(method='POST' action='create')
+   .form-row
+     .form-group.col-md-6
+        label(for='firstName') #{t('author.message.firstName')}:
+        input#name.form-control(type='text' placeholder='First name (Christian)' name='firstName' required value=(author&&author.firstName!==undefined)?author.firstName:'')
+   .form-row
+     .form-group.col-md-6
+        label(for='familyName') #{t('author.message.familyName')}:
+        input#name.form-control(type='text' placeholder='Family name (Surname)' name='familyName' required value=(author&&author.familyName!==undefined)?author.familyName:'')
+   .form-row
+     .form-group.col-md-6
+        label(for='dateOfBirth') #{t('author.message.dateOfBirth')}:
+        input#dateOfBirth.form-control(type='date' placeholder='Date of Birth' name='dateOfBirth' value=(author&&author.dateOfBirth!==undefined)?author.dateOfBirth:'')
+   .form-row
+     .form-group.col-md-6
+        label(for='dateOfDeath') #{t('author.message.dateOfDeath')}:
+        input#dateOfDeath.form-control(type='date' placeholder='Date of Death' name='dateOfDeath' value=(author&&author.dateOfDeath!==undefined)?author.dateOfDeath:'')
+   .form-row
+     .form-group.col-md-6
+        button.btn.btn-primary(type='submit') #{t('author.message.submit')}
+  if formErrors
+    ul
+      for error in formErrors
+        li #{t(error.msg)}

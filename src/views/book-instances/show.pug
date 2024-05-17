@@ -12,3 +12,9 @@ block content
     p.text-warning #{t('bookInstance.status.loaned')}
   if bookInstance.status!=='Available'
     p #[strong #{t('bookInstance.message.dueBack')}:] #{dueBack}
+  
+  form(method='POST', action=`/book-instances/${bookInstance.id}/delete`)
+    div.form-group
+      input#authorid.form-control(type='hidden', name='bookInstanceId', value=bookInstance.id)
+    
+    button.btn.btn-primary(type='submit') #{t('bookInstance.message.delete')}

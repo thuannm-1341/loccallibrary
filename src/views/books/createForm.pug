@@ -1,0 +1,44 @@
+extend ../layout
+
+block content
+  h1 #{t(title)}
+  form(method='POST' action='create')
+    .form-row
+      .form-group.col-md-6
+        label(for='title') #{t('book.message.title')}:
+        input#name.form-control(type='text' placeholder='Death Wave' name='title' required value=(book!==undefined&&book.title!=undefined)?book.title:'')
+    .form-row
+      .form-group.col-md-6
+        label(for='author') #{t('book.message.author')}
+        select#author.form-control(name='author' required)
+          each author in authors
+            option(value=author.id)(selected=(book!=undefined&&book.author.id===author.id)?'selected':'')= author.name()
+    .form-row
+      .form-group.col-md-6
+        label(for='summary') #{t('book.message.summary')}
+        input#name.form-control(type='text' placeholder='Summary' name='summary' required value=(book!==undefined&&book.summary!=undefined)?book.summary:'')
+    .form-row
+      .form-group.col-md-6
+        label(for='isbn') #{t('book.message.ISBN')}
+        input#name.form-control(type='text' placeholder='ISBN' name='isbn' required value=(book!==undefined&&book.isbn!=undefined)?book.isbn:'')
+    .form-row
+      .form-group.col-md-6
+        label #{t('book.message.genres')}
+        //- Use checkboxes for genres
+        each genre in genres
+          //- Check if the genre is included in the book's genres
+          if book!==undefined && book.genres.some(bookGenre => bookGenre.id === genre.id)
+            .form-check
+              input.form-check-input(type='checkbox' name='genres' value=genre.id id='genre#{genre.id}' checked)
+              label.form-check-label(for='genre#{genre.id}')= genre.name
+          else
+            .form-check
+              input.form-check-input(type='checkbox' name='genres' value=genre.id id='genre#{genre.id}')
+              label.form-check-label(for='genre#{genre.id}')= genre.name
+    .form-row
+      .form-group.col-md-6
+        button.btn.btn-primary(type='submit') #{t('book.message.submit')}
+  if formErrors
+    ul
+      for error in formErrors
+        li #{t(error.msg)}

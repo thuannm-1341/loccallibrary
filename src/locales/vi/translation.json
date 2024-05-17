@@ -28,7 +28,10 @@
   "book": {
     "title": {
       "listOfBook": "Danh sách các quyển sách có trong thư viện",
-      "detail": "Chi tiết sách"
+      "detail": "Chi tiết sách",
+      "update": "Cập nhật sách",
+      "delete": "Xóa sách",
+      "create": "Thêm sách"
     },
     "message": {
       "title": "Tựa đề",
@@ -38,7 +41,17 @@
       "genres": "Thể loại",
       "copies": "Bản sao",
       "emptyBookList": "Không có quyển sách nào",
-      "noGenres": "Quyển sách này chưa có thể loại"
+      "noGenres": "Quyển sách này chưa có thể loại",
+      "update": "Cập nhật sách",
+      "delete": "Xóa sách",
+      "submit": "Xác nhận",
+      "create": "Thêm sách",
+      "deleteConfirm": "Bạn có thật sự muốn xóa sách này không?",
+      "deleteWarning": "Xóa những bản sao sau trước khi cố gắng xóa sách này.",
+      "invalidTitleLength": "Độ dài tựa đề tối thiểu là 3 ký tự",
+      "invalidAuthor": "Không được bỏ trống tác giả",
+      "invalidSummaryLength": "Độ dài của trường tóm tắt tối thiểu là 3 ký tự",
+      "invalidIsbnLength": "Isbn tối thiểu có 1 ký tự"
     },
     "error": {
       "invalidParameter": "Tham số id sách không hợp lệ",
@@ -48,13 +61,27 @@
   "author": {
     "title": {
       "listOfAuthor": "Danh sách tác giả",
-      "detail": "Chi tiết tác giả"
+      "detail": "Chi tiết tác giả",
+      "delete": "Xóa tác giả",
+      "create": "Thêm tác giả"
     },
     "message": {
       "emptyAuthorList": "Không có tác giả nào",
       "author": "Tác giả",
       "books": "Sách",
-      "emptyBookList": "Không có sách nào"
+      "emptyBookList": "Không có sách nào",
+      "delete": "Xóa",
+      "deleteWarning": "Xóa những cuốn sách sau trước khi cố gắng xóa tác giả này.",
+      "deleteConfirm": "Bạn có thật sự muốn xóa tác giả này không?",
+      "firstName": "Tên",
+      "familyName": "Họ",
+      "dateOfBirth": "Ngày sinh",
+      "dateOfDeath": "Ngày mất",
+      "submit": "Xác nhận",
+      "invalidFirstNameLength": "Tên phải tối thiểu 3 ký tự",
+      "invalidFamilyNameLength": "Họ phải tối thiểu 3 ký tự",
+      "invalidDateOfBirth": "Ngày sinh phải trong quá khứ",
+      "invalidDateOfDeath": "Ngày mất phải trong quá khứ"
     },
     "error": {
       "invalidParameter": "Tham số id tác giả không hợp lệ",
@@ -64,13 +91,20 @@
   "bookInstance": {
     "title": {
       "listOfBookInstance": "Danh sách các bản sao sách",
-      "detail": "Chi tiết bản sao"
+      "detail": "Chi tiết bản sao",
+      "create": "Thêm bản sao"
     },
     "message": {
       "emptyBookInstanceList": "Không có bản sao nào",
       "title": "Tựa đề",
       "imprint": "Ấn bản",
-      "dueBack": "Hạn cuối"
+      "dueBack": "Hạn cuối",
+      "books": "Sách",
+      "status": "Trạng thái",
+      "delete": "Xóa",
+      "invalidImprint": "Ấn bản không hợp lệ",
+      "invalidDueBack": "Định dạng ngày hoàn trả không hợp lệ",
+      "invalidStatus": "Trạng thái sách không hợp lệ"
     },
     "status": {
       "available": "Có sẵn",
@@ -85,12 +119,20 @@
   "genre": {
     "title": {
       "listOfGenre": "Danh sách thể loại",
-      "detail": "Chi tiết thể loại"
+      "detail": "Chi tiết thể loại",
+      "create": "Tạo thể loại mới",
+      "delete": "Xóa thể loại"
     },
     "message": {
       "books": "Sách",
       "emptyGenreList": "Không có thể loại nào",
-      "emptyBookList": "Không có quyển sách nào"
+      "emptyBookList": "Không có quyển sách nào",
+      "genre": "Thể loại",
+      "submit": "Xác nhận",
+      "delete": "Xóa",
+      "deleteWarning": "Xóa những cuốn sách sau trước khi cố gắng xóa thể loại này.",
+      "deleteConfirm": "Bạn có thật sự muốn xóa thể loại này không?",
+      "invalidNameLength": "Độ dài tên tối thiểu 3 ký tự"
     },
     "error": {
       "invalidParameter": "Tham số id thể loại không hợp lệ",

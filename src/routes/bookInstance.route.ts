@@ -4,20 +4,20 @@ const bookInstanceRouter: Router = Router();
 
 bookInstanceRouter.get('/', bookInstanceController.getBookInstances);
 
-bookInstanceRouter.get(
+bookInstanceRouter.get('/create', bookInstanceController.createBookInstanceGet);
+bookInstanceRouter.post(
   '/create',
-  bookInstanceController.getCreateBookInstanceForm,
+  bookInstanceController.createBookInstancePost,
 );
-bookInstanceRouter.post('/create', bookInstanceController.createBookInstance);
 
 bookInstanceRouter.get('/:id', bookInstanceController.getBookInstanceDetails);
 bookInstanceRouter.put(
   '/:id/update',
   bookInstanceController.updateBookInstance,
 );
-bookInstanceRouter.delete(
+bookInstanceRouter.post(
   '/:id/delete',
-  bookInstanceController.deleteBookInstance,
+  bookInstanceController.bookInstanceDeletePost,
 );
 
 export default bookInstanceRouter;

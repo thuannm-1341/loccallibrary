@@ -28,4 +28,14 @@ export class BookInstanceService {
       where: { id: id },
     });
   }
+
+  async deleteBookInstance(id: number): Promise<void> {
+    await this.bookInstanceRepository.delete(id);
+  }
+
+  async saveBookInstance(
+    author: BookInstanceEntity,
+  ): Promise<BookInstanceEntity> {
+    return await this.bookInstanceRepository.save(author);
+  }
 }

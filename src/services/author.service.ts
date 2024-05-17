@@ -29,4 +29,12 @@ export class AuthorService {
       where: { id: id },
     });
   }
+
+  async deleteAuthor(id: number): Promise<void> {
+    await this.authorRepository.delete(id);
+  }
+
+  async saveAuthor(author: AuthorEntity): Promise<AuthorEntity> {
+    return await this.authorRepository.save(author);
+  }
 }

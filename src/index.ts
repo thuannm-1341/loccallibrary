@@ -9,6 +9,7 @@ import { AppDataSource } from './configs/ormConfig';
 import i18next from 'i18next';
 import i18nextMiddleware from 'i18next-http-middleware';
 import i18nextBackend from 'i18next-fs-backend';
+import bodyParser from 'body-parser';
 
 const port = process.env.PORT || 3000;
 const sessionSecret = process.env.SESSION_SECRET || 'secretString';
@@ -17,6 +18,9 @@ const cookieSecret = process.env.COOKIE_PARSER || 'secretString';
 const app = express();
 // Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 //i18next
 i18next
